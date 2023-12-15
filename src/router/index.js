@@ -20,6 +20,13 @@ const routes = [
       return import(/* webpackChunkName: "about" */ "../views/AboutView.vue");
     },
   },
+  {
+    path: "/services",
+    name: "services",
+    component: function () {
+      return import("../views/ServicesView.vue");
+    },
+  },
 ];
 
 const router = new VueRouter({
