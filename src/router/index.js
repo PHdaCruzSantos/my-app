@@ -27,6 +27,13 @@ const routes = [
       return import("../views/ServicesView.vue");
     },
   },
+  {
+    path: "/assessments",
+    name: "assessments",
+    component: function () {
+      return import("../views/AssessmentsView.vue");
+    },
+  },
 ];
 
 const router = new VueRouter({

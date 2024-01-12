@@ -32,6 +32,13 @@
             >
               <!-- <router-link to="/services">Services</router-link> -->
             </md-tab>
+            <md-tab
+              id="tab-assessments"
+              md-label="Assessments"
+              md-sync-route
+              to="/assessments"
+            >
+            </md-tab>
           </md-tabs>
         </div>
       </md-app-toolbar>
