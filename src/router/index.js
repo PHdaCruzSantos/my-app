@@ -34,6 +34,13 @@ const routes = [
       return import("../views/AssessmentsView.vue");
     },
   },
+  {
+    path: "/payments",
+    name: "payments",
+    component: function () {
+      return import("../views/PaymentsView.vue");
+    },
+  },
 ];
 
 const router = new VueRouter({

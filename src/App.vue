@@ -39,6 +39,13 @@
               to="/assessments"
             >
             </md-tab>
+            <md-tab
+              id="tab-payments"
+              md-label="Payments"
+              md-sync-route
+              to="/payments"
+            >
+            </md-tab>
           </md-tabs>
         </div>
       </md-app-toolbar>
