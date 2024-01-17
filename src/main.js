@@ -8,8 +8,17 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import * as VueGoogleMaps from "vue2-google-maps";
+import GAuth from "vue-google-oauth2";
 
 Vue.config.productionTip = false;
+
+Vue.use(GAuth, {
+  clientId:
+    "58275547174-25rua383hclkjfmfufv88j81eh3hsfr4.apps.googleusercontent.com",
+  scope: "profile email",
+  prompt: "consent",
+  access_type: "offline",
+});
 Vue.use(VueMaterial);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);

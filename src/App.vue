@@ -7,12 +7,6 @@
           <div class="md-toolbar-section-start">
             <span class="md-title">Secur Analysys</span>
           </div>
-
-          <div class="md-toolbar-section-end">
-            <md-button class="md-icon-button">
-              <md-icon>more_vert</md-icon>
-            </md-button>
-          </div>
         </div>
 
         <div class="md-toolbar-row">
@@ -46,6 +40,13 @@
               to="/payments"
             >
             </md-tab>
+            <md-tab
+              id="tab-logins"
+              md-label="Logins"
+              md-sync-route
+              to="/logins"
+            >
+            </md-tab>
           </md-tabs>
         </div>
       </md-app-toolbar>
@@ -56,6 +57,15 @@
     </md-app>
   </div>
 </template>
+
+<script>
+export default {
+  name: "LastRowFixed",
+  data: () => ({
+    menuVisible: false,
+  }),
+};
+</script>
 
 <style lang="scss" scoped>
 .md-app {
@@ -68,12 +78,3 @@
   width: 100%;
 }
 </style>
-
-<script>
-export default {
-  name: "LastRowFixed",
-  data: () => ({
-    menuVisible: false,
-  }),
-};
-</script>
