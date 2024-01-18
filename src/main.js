@@ -9,9 +9,15 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import * as VueGoogleMaps from "vue2-google-maps";
 import GAuth from "vue-google-oauth2";
+import facebookLogin from "facebook-login-vuejs";
 
 Vue.config.productionTip = false;
 
+Vue.component("my-component", {
+  components: {
+    facebookLogin,
+  },
+});
 Vue.use(GAuth, {
   clientId:
     "58275547174-25rua383hclkjfmfufv88j81eh3hsfr4.apps.googleusercontent.com",
