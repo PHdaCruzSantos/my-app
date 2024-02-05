@@ -10,27 +10,8 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import * as VueGoogleMaps from "vue2-google-maps";
 import GAuth from "vue-google-oauth2";
 import facebookLogin from "facebook-login-vuejs";
-var LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;
-var passport = require("passport");
 
-passport.use(
-  new LinkedInStrategy(
-    {
-      clientID: "77irql6z6ncp0r",
-      clientSecret: "CMmCU6RDojivYKLO",
-      callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback",
-      scope: ["r_emailaddress", "r_liteprofile"],
-      state: true,
-    },
-    function (accessToken, refreshToken, profile, done) {
-      process.nextTick(function () {
-        return done(null, profile);
-      });
-    }
-  )
-);
 Vue.config.productionTip = false;
-
 Vue.component("my-component", {
   components: {
     facebookLogin,

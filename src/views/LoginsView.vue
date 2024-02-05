@@ -15,6 +15,9 @@
             :clientSecret="CMmCU6RDojivYKLO"
           />
         </b-col>
+        <b-col cols="12" class="mt-3 mb-3">
+          <Twilio2FAVue />
+        </b-col>
       </b-row>
     </b-card>
   </div>
@@ -23,14 +26,13 @@
 <script>
 import GoogleLogin from "@/components/GoogleLogin/GoogleLogin.vue";
 import FacebookLogin from "@/components/FacebookLogin/FacebookLogin.vue";
-import LinkedinLogin from "@/components/LinkedinLogin/LinkedinLogin.vue";
-
+import Twilio2FAVue from "@/components/Twilio2FA/Twilio2FA.vue";
 export default {
   name: "LoginView",
   components: {
     GoogleLogin,
     FacebookLogin,
-    LinkedinLogin,
+    Twilio2FAVue,
   },
 };
 </script>
