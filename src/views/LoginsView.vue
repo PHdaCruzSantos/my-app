@@ -16,7 +16,7 @@
           />
         </b-col>
         <b-col cols="12" class="mt-3 mb-3">
-          <Twilio2FAVue />
+          <zenvia />
         </b-col>
       </b-row>
     </b-card>
@@ -26,13 +26,13 @@
 <script>
 import GoogleLogin from "@/components/GoogleLogin/GoogleLogin.vue";
 import FacebookLogin from "@/components/FacebookLogin/FacebookLogin.vue";
-import Twilio2FAVue from "@/components/Twilio2FA/Twilio2FA.vue";
+import Zenvia from "@/components/Zenvia/Zenvia.vue";
 export default {
   name: "LoginView",
   components: {
     GoogleLogin,
     FacebookLogin,
-    Twilio2FAVue,
+    Zenvia,
   },
 };
 </script>
