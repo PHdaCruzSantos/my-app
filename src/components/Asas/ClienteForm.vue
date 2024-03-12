@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="createCustomer">
+  <form @submit.prevent="onsubmit()">
     <md-field>
       <label>Nome</label>
       <md-input v-model="cliente.nome" required></md-input>
@@ -21,13 +21,23 @@ export default {
   data() {
     return {
       cliente: {
-        nome: "PH",
+        nome: "PHsecur",
         email: "p.h@gmail.com",
         cpfCnpj: "00100200369",
       },
       access_token:
         "$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDAwNzQ3NDE6OiRhYWNoXzczMjgzNzhjLTVhYmItNGNjOS1iYzQ2LWY2N2UzNjg4YzVmNg==",
       url: "https://sandbox.asaas.com/api/v3/customers",
+      options: {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${this.access_token}`,
+        },
+        body: JSON.stringify(this.cliente),
+      },
     };
   },
   methods: {
@@ -35,21 +45,7 @@ export default {
       this.createCustomer(this.cliente);
     },
     createCustomer() {
-      const options = {
-        method: "POST",
-        mode: "no-cors", // no-cors, *cors, same-origin
-        headers: {
-          "Content-Type": "application/json",
-          access_token: this.access_token,
-        },
-        body: JSON.stringify({
-          name: this.cliente.nome,
-          email: this.cliente.email,
-          cpfCnpj: this.cliente.cpfCnpj,
-        }),
-        withCredentials: true,
-      };
-      const response = fetch(this.url, options)
+      const response = fetch(this.url, this.options)
         .then(async (response) => {
           const data = await response.text();
           const json = JSON.parse(data);
