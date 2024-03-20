@@ -10,16 +10,19 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import * as VueGoogleMaps from "vue2-google-maps";
 import GAuth from "vue-google-oauth2";
 import facebookLogin from "facebook-login-vuejs";
-import { createProxyMiddleware } from "http-proxy-middleware";
 Vue.config.productionTip = false;
+// const { createProxyMiddleware } = require("http-proxy-middleware");
+// const express = require("express");
+// const app = express();
 
-const apiProxy = createProxyMiddleware({
-  target: "https://sandbox.asaas.com",
-  changeOrigin: true,
-  pathRewrite: {
-    "^/api": "/api/v3",
-  },
-});
+// app.use(
+//   "/api",
+//   createProxyMiddleware({
+//     target: "https://sandbox.asaas.com",
+//     changeOrigin: true,
+//   })
+// );
+// app.listen(3000);
 
 Vue.component("my-component", {
   components: {
@@ -42,8 +45,6 @@ Vue.use(VueGoogleMaps, {
     libraries: "places", // necessary for places input
   },
 });
-Vue.use(apiProxy);
-
 new Vue({
   router,
   render: function (h) {
