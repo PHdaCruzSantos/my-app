@@ -1,13 +1,10 @@
 const fetch = require("node-fetch");
-
-// const url = "/api/v3/customers";
 const options = {
   method: "POST",
   headers: {
     accept: "application/json",
     "content-type": "application/json",
-    access_token:
-      "$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDAwNzQ3NDE6OiRhYWNoXzI4NzAwMTUwLWI1MjctNDg4MS1iZTg2LWEyMDE2ZTJkNjVjMA==",
+    access_token: "API_KEY",
   },
   body: JSON.stringify({
     name: "Nome do Cliente",
